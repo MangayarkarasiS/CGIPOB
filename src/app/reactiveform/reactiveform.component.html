@@ -1,0 +1,65 @@
+
+<app-employee></app-employee>
+
+<p>reactiveform works!</p>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+<label for="name">User Name</label>
+<input formControlName="name" type="text" 
+/>
+<div
+*ngIf="!name?.valid && (name?.dirty ||name?.touched)">
+<div [hidden]="!name?.errors?.required">
+  First Name is required
+</div>
+<div [hidden]="!name?.errors?.maxlength">
+  Max Length is 5
+</div>
+</div>
+<mat-form-field class="example-full-width">
+  <mat-label>Favorite food</mat-label>
+  <input matInput formControlName="email" placeholder="Ex. doodle@gmail.com" type="text"/>
+  
+</mat-form-field>
+
+<div *ngIf="!email?.valid && (email?.dirty ||email?.touched)">
+  <div [hidden]="!email?.errors?.required">
+    email is required
+  </div>
+  <div [hidden]="!email?.errors?.email">
+    invalid email id
+  </div>
+</div>
+<p>
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1">Option 1</mat-radio-button>
+    <mat-radio-button value="2">Option 2</mat-radio-button>
+  </mat-radio-group>
+  <label for="gender">Gender </label>
+  <input  type="radio" value="male" id="gender" name="gender" formControlName="gender"> Male
+  <input type="radio" value="female" id="gender" name="gender" formControlName="gender"> Female
+</p>
+<div *ngIf="!gender?.valid && (gender?.dirty ||gender?.touched)">
+  <div [hidden]="!gender?.errors?.required">
+    gender is required
+  </div>
+</div>
+
+
+<p>
+  <label for="course">course </label>
+  <select id="course" name="course" formControlName="course">
+    <option [ngValue]="c.id" *ngFor="let c of courseList">
+      {{c.name}}
+    </option>
+  </select>
+</p>
+<div *ngIf="!course?.valid && (course?.dirty ||course?.touched)">
+  <div [hidden]="!course?.errors?.required">
+    course is required
+  </div>
+</div>
+<button mat-raised-button class="accent" type="submit" [disabled]="!userForm.valid" >Submit</button>
+ 
+</form>
+
+<pre><code>{{userForm.value | json}}</code></pre>

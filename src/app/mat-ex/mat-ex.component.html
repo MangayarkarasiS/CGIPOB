@@ -1,0 +1,26 @@
+<div class="container">
+  <h2> Number List</h2>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let num of allNumbers">
+      {{num}}- {{num |expo:4 |currency:'INR':'symbol'}}
+    </li>
+  </ul>
+</div>
+
+
+
+<!--<p>mat-ex works!</p>
+
+<h1>Login Form</h1>
+<mat-form-field class="example-full-width">
+
+  <mat-label>First name</mat-label>
+  <input matInput type="Text" placeholder="Enter Name" />
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+  <mat-label>Password</mat-label>
+  <input matInput type="Text" placeholder="Enter password" />
+</mat-form-field><br>
+<button mat-raised-button color="accent">Login</button>
+<button mat-raised-button color="blue">Cancel </button>-->

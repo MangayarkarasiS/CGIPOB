@@ -1,0 +1,22 @@
+{
+  "peoples": [
+    {
+      "id": 1,
+      "name": "Douglas  Pace",
+      "age": "35",
+      "country": "UK"
+    },
+    {
+      "id": 2,
+      "name": "Mac Miller",
+      "age": "38",
+      "country": "USA"
+    },
+    {
+      "id": 3,
+      "name": "Day  Meyers",
+      "age": "25",
+      "country": "India"
+    }
+  ]
+}

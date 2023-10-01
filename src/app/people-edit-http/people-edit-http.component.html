@@ -1,0 +1,61 @@
+<div class="container">
+    <form [formGroup]="myReactiveForm" (ngSubmit)="editPeople()">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h3>Edit People</h3>
+            </div>
+            <div class="card-body">
+                <div class="form-group" >
+                    <label for="sId" class="form-label">People Id</label>
+                    <input type="text" 
+                           class="form-control" 
+                           id="sId" 
+                           [readonly] = "isDisabled"
+                           formControlName="rsId"
+                           >                          
+                           
+                </div>
+                <div class="form-group">
+                    <label for="sName" class="form-label">People Name</label>
+                                            
+                            <div class="text-danger" 
+                            *ngIf="myReactiveForm.get('rsName')?.errors?.['required']">
+                            Name is required
+                        </div>
+                        <div class="text-danger" 
+                        *ngIf="myReactiveForm.get('rsName')?.errors?.['minlength']">
+                        Name needs 2 characters
+                    </div>
+                    <div class="text-danger" 
+                        *ngIf="myReactiveForm.get('rsName')?.errors?.['invalidText']">
+                        Name needs only characters
+                    </div>
+                    <input type="text" 
+                    class="form-control" 
+                    id="sName" 
+                    formControlName="rsName"
+                     > 
+                </div>
+                <div class="form-group">
+                    <label for="sAge" class="form-label">People Age</label>
+                    <input type="text" formControlName="rsAge" class="form-control" id="sAge" >
+                </div>
+                <div class="form-group">
+                    <label for="sCountry" class="form-label">People country</label>
+                    <input type="text" class="form-control"  formControlName="rsCountry" id="sCountry" >
+                </div>
+                
+            </div>
+            <div class="card-footer bg-warning text-white">
+                <button type="submit" class="btn btn-sucess" >Edit Student</button>
+                <button type="button"  (click)="addAnotherValidator()" 
+                class="btn btn-sucess" >Add validator</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+
+

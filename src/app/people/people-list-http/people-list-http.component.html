@@ -1,0 +1,34 @@
+
+
+<div class="container">
+    <h2 [ngStyle]="{'font-size-px':30}"> People List</h2>
+    <div class="form-group m-3"></div>
+    
+            <table class="table table-striped">
+            <thead class="table-dark text-white">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>age</th>
+                    <th>Gender</th>
+                   <th></th>
+                     <!--<th></th>-->
+                </tr>
+            </thead>
+            <tbody>
+              
+                  <tr *ngFor="let per of people" >
+                    <td>{{per.id}}</td>
+                    <td>{{per.name}}</td>
+                    <td>{{per.age}}</td>
+                    <td>{{per.country}}</td>
+                    <td><button type="button"  (click)="editPeople(per.id)">Edit</button></td>
+                   <td><button type="button"  (click)="deletePeople(per.id)">Delete</button></td>
+                   <td><button type="button"  (click)="ViewPeople(per.id)">View</button></td>
+                </tr>
+            </tbody>
+        </table>
+      <!--  <button type="button" class="btn btn-success" (click)="AddPeople()">AddPeople</button>-->
+    </div>
+    
+

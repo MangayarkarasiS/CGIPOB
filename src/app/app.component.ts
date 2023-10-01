@@ -6,5 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CGIPOB';
+
+  username="";
+  title:string = 'CGIPOB Training';
+  name = "Sindhurama";
+  hgt:number=0;
+  count:number=0;
+
+  size="10px";
+  pat="C:\Users\Mangai\Desktop\Edurekha\rose1.jpg";
+
+  onClick(){
+    this.count++;
+    this.name="CGI Participants";
+  }
+
+  text = ''; 
+  onkeyup(x:any) {   
+    this.text += x.target.value + ' | '; 
+  } 
+
 }

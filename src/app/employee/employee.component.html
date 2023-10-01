@@ -1,0 +1,96 @@
+
+For loop example: {{name |titlecase}}
+<div class="container">
+    <h2 [ngStyle]="{'font-size-px':30}"> People List</h2>
+    <div class="form-group m-3"></div>
+    <input type="text" class="form-control" placeholder="Enter country name" [(ngModel)]="countNm">
+            <table class="table table-striped">
+            <thead class="table-dark text-white">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>age</th>
+                    <th>Gender</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+              
+                  <tr *ngFor="let per of people | filterData:countNm" >
+                    <td>{{per.id}}</td>
+                    <td>{{per.name}}</td>
+                    <td>{{per.age}}</td>
+                    <td>{{per.country}}</td>
+                    <td><button type="button"  (click)="EditPeople()">Edit</button></td>
+                    <td><button type="button"  (click)="UpdatePeople()">Update</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-success" (click)="AddPeople()">AddPeople</button>
+    </div>
+    
+
+<!--<ul>
+  <li *ngFor="let person of people"> 
+    {{ person.name }}
+  </li>
+ </ul>
+
+ If condition example: 
+
+<ul *ngFor="let person of  people">
+     <li *ngIf="person.age>30"> {{person.name}}</li>
+</ul> 
+
+Switch Example :
+
+<ul *ngFor="let person of people"
+    [ngSwitch]="person.country"> 
+
+  <li *ngSwitchCase="'UK'" 
+      >{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchCase="'USA'"
+      class="text-primary">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchCase="'HK'"
+      class="text-danger">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchDefault 
+      >{{ person.name }} ({{ person.country }})
+  </li>
+</ul>
+
+
+
+    <h4>NgIf</h4>
+<ul *ngFor="let person of people">
+  <li *ngIf="person.age < 30"> (1)
+  {{ person.name }} ({{ person.age }})
+  </li>
+</ul>
+
+
+
+  <h3>Name of employee : {{empname}} 
+      Age of Employee : {{empage}}</h3>
+      <ul   *ngFor="let person of people"> 
+      <li *ngIf="person.country ==='UK'"
+      class="text-success">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngIf="person.country === 'USA'"
+      class="text-primary">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngIf="person.country === 'HK'"
+      class="text-danger">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngIf="person.country !== 'HK' && person.country !== 'UK' && person.country !== 'USA'"
+      class="text-warning">{{ person.name }} ({{ person.country }})
+  </li>
+
+  
+ </ul>
+
+  </div>`
+-->
